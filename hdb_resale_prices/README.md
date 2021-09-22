@@ -37,7 +37,7 @@ In this project, we explore the factors that might affect HDB resale prices in S
 <a name="File_Descriptions"></a>
 ## File Descriptions
 
-* <strong>[ data ] (https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : folder containing all data files used/generated
+* <strong>[ data ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : folder containing all data files used/generated
     * <strong> coord_data.csv </strong>: list of unique addresses and the corresponding latitudes and longitudes
     * <strong> housing_cpi.csv </strong>: list of price indices for resale flats from 2017 to 2021, obtained from Singapore Department of Statistics
     * <strong> malls.csv </strong>: list of shopping malls in Singapore, obtained from Wikipedia
