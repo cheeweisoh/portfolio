@@ -7,7 +7,7 @@ In this project, we explore the factors that might affect HDB resale prices in S
 
 ## Current Status
 * [Completed] Data Collection
-* [In Progress] Exploratory Data Analysis
+* [Partially Completed] Exploratory Data Analysis
 * [Pending] Model Building
 
 ## Table of Contents
