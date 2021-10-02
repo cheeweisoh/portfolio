@@ -47,6 +47,8 @@ In this project, we explore the factors that might affect HDB resale prices in S
     * <strong> nearest_pri_sch.csv </strong>: distance from resale flat to nearest primary school for each unique address
     * <strong> nearest_sec_school.csv </strong>: distance from resale flat to nearest secondary school for each unique address
     * <strong> resale_prices.csv <strong>: final dataset with added features
+* <strong>Housing Price Dataset</strong>: retrieving dataset from source, and including new features for distance to amenities
+* <strong>Housing Price Analysis</strong>: exploratory data analysis of resale price dataset
     
 <a name="Credits"></a>
 ## Credits
