@@ -51,7 +51,7 @@ In this project, we explore the factors that might affect HDB resale prices in S
     * <strong> resale_prices_final.csv </strong>: final dataset for model building
 * <strong>Housing Price Dataset.ipynb</strong>: retrieving dataset from source, and including new features for distance to amenities
 * <strong>Housing Price Analysis.ipynb</strong>: exploratory data analysis of resale price dataset
-* <strong>HOusing Prices Model.ipynb</strong>: building supervised learning models to predict resale price
+* <strong>Housing Prices Model.ipynb</strong>: building supervised learning models to predict resale price
     
 <a name="Credits"></a>
 ## Credits
