@@ -9,6 +9,7 @@ In this project, we explore the factors that might affect HDB resale prices in S
 * [Completed] Data Collection
 * [Completed] Exploratory Data Analysis
 * [In Progress] Model Building
+* [Pending] Implementation
 
 ## Table of Contents
 
@@ -48,8 +49,9 @@ In this project, we explore the factors that might affect HDB resale prices in S
     * <strong> nearest_sec_school.csv </strong>: distance from resale flat to nearest secondary school for each unique address
     * <strong> resale_prices.csv </strong>: dataset with added features
     * <strong> resale_prices_final.csv </strong>: final dataset for model building
-* <strong>Housing Price Dataset</strong>: retrieving dataset from source, and including new features for distance to amenities
-* <strong>Housing Price Analysis</strong>: exploratory data analysis of resale price dataset
+* <strong>Housing Price Dataset.ipynb</strong>: retrieving dataset from source, and including new features for distance to amenities
+* <strong>Housing Price Analysis.ipynb</strong>: exploratory data analysis of resale price dataset
+* <strong>HOusing Prices Model.ipynb</strong>: building supervised learning models to predict resale price
     
 <a name="Credits"></a>
 ## Credits
