@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    function goBack(){
+        window.history.back();
+    }
+</script>
+
+<div class="ui segment">
+    <div class="ui two column very relaxed grid">
+        <div class="column">
+            <h3>Resale Price</h3>
+            The predicted resale price for this house in Q3 2021 is
+            <br><br>
+            <center><p style="color:red; font-size:40px;">S$ {{ price }}</p></center>
+        </div>
+        <div class="column">
+            <h3>House Details</h3>
+            <br>
+
+            <table class="ui very basic table">
+                <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Postal Code</td>
+                    <td>{{ postal_code }}</td>
+                </tr>
+                <tr>
+                    <td>Floor</td>
+                    <td>{{ floor }}</td>
+                </tr>
+                <tr>
+                    <td>Remaining Lease (years)</td>
+                    <td>{{ remaining_lease }}</td>
+                </tr>
+                <tr>
+                    <td>Floor Area (sqm)</td>
+                    <td>{{ floor_area_sqm }}</td>
+                </tr>
+                <tr>
+                    <td>Flat Type</td>
+                    <td>{{ flat_type }}</td>
+                </tr>
+                <tr>
+                    <td>Flat Model</td>
+                    <td>{{ flat_model }}</td>
+                </tr>
+                <tr>
+                    <td>Town</td>
+                    <td>{{ town }}</td>
+                </tr>
+                <tr>
+                    <td>Nearest MRT/LRT</td>
+                    <td>{{ nearest_mrt }}</td>
+                </tr>
+                <tr>
+                    <td>Nearest Primary School</td>
+                    <td>{{ nearest_pri }}</td>
+                </tr>
+                <tr>
+                    <td>Nearest Secondary School</td>
+                    <td>{{ nearest_sec }}</td>
+                </tr>
+                <tr>
+                    <td>Nearest Shopping Mall</td>
+                    <td>{{ nearest_mall }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<button type="button" onclick="goBack()" class="ui button">Back</button>
+
+{% endblock %}

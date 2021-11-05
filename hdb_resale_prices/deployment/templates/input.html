@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+     $(document).ready(function(){
+        $(#"reset").click(function(){
+            $(#"input").trigger("reset");
+        });
+    });
+</script>
+
+<script>
+    function validateForm() {
+        let postal = document.forms["input"]["postal_code"].value;
+        if (postal.length !== 6){
+            alert("Invalid Postal Code");
+            return false;
+        }
+
+        let lease = document.forms["input"]["remaining_lease"].value;
+        if (lease < 0 || lease > 99) {
+            alert("Invalid Remaining Lease");
+            return false;
+        }
+    }
+</script>
+
+<form id="input" class="ui form" action="/submit" onsubmit="return validateForm()" method="post">
+    <div class="field">
+        <label>Postal Code</label>
+        <input type="text" name="postal_code" placeholder="Postal Code">
+    </div>
+    <div class="three fields">
+        <div class="field">
+            <label>Floor</label>
+            <input type="text" name="floor" placeholder="Floor">
+        </div>
+        <div class="field">
+            <label>Remaining Lease</label>
+            <input type="text", name="remaining_lease" placeholder="Years">
+        </div>
+        <div class="field">
+            <label>Floor Area</label>
+            <input type="text" name="floor_area_sqm" placeholder="Sqm">
+        </div>
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label>Flat Type</label>
+            <select class="ui search dropdown" name="flat_type">
+                <option value="1 ROOM">1 Room</option>
+                <option value="2 ROOM">2 Room</option>
+                <option value="3 ROOM">3 Room</option>
+                <option value="4 ROOM">4 Room</option>
+                <option value="5 ROOM">5 Room</option>
+                <option value="EXECUTIVE">Executive Apartment</option>
+                <option value="MULTI-GENERATION">Multi-Generation</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Flat Model</label>
+            <select class="ui search dropdown", name="flat_model">
+                <option value="2-room">2-room</option>
+                <option value="Adjoined flat">Adjoined flat</option>
+                <option value="Apartment">Apartment</option>
+                <option value="DBSS">DBSS</option>
+                <option value="Improved">Improved</option>
+                <option value="Improved-Maisonette">Improved-Maisonette</option>
+                <option value="Maisonette">Maisonette</option>
+                <option value="Model A">Model A</option>
+                <option value="Model A-Maisonette">Model A-Maisonette</option>
+                <option value="Model A2">Model A2</option>
+                <option value="Multi Generation">Multi Generation</option>
+                <option value="New Generation">New Generation</option>
+                <option value="Premium Apartment">Premium Apartment</option>
+                <option value="Premium Apartment Loft">Premium Apartment Loft</option>
+                <option value="Premium Maisonette">Premium Maisonette</option>
+                <option value="Simplified">Simplified</option>
+                <option value="Standard">Standard</option>
+                <option value="Terrace">Terrace</option>
+                <option value="Type S1">Type S1</option>
+                <option value="Type S2">Type S2</option>
+            </select>
+        </div>
+    </div>
+    <div class="field">
+        <label>Town</label>
+        <select class="ui search dropdown", name="town">
+            <option value="ANG MO KIO">ANG MO KIO</option>
+            <option value="BEDOK">BEDOK</option>
+            <option value="BISHAN">BISHAN</option>
+            <option value="BUKIT BATOK">BUKIT BATOK</option>
+            <option value="BUKIT MERAH">BUKIT MERAH</option>
+            <option value="BUKIT PANJANG">BUKIT PANJANG</option>
+            <option value="BUKIT TIMAH">BUKIT TIMAH</option>
+            <option value="CENTRAL AREA">CENTRAL AREA</option>
+            <option value="CHOA CHU KANG">CHOA CHU KANG</option>
+            <option value="CLEMENTI">CLEMENTI</option>
+            <option value="GEYLANG">GEYLANG</option>
+            <option value="HOUGANG">HOUGANG</option>
+            <option value="JURONG EAST">JURONG EAST</option>
+            <option value="JURONG WEST">JURONG WEST</option>
+            <option value="KALLANG/WHAMPOA">KALLANG/WHAMPOA</option>
+            <option value="MARINE PARADE">MARINE PARADE</option>
+            <option value="PASIR RIS">PASIR RIS</option>
+            <option value="PUNGGOL">PUNGGOL</option>
+            <option value="QUEENSTOWN">QUEENSTOWN</option>
+            <option value="SEMBAWANG">SEMBAWANG</option>
+            <option value="SENGKANG">SENGKANG</option>
+            <option value="SERANGOON">SERANGOON</option>
+            <option value="TAMPINES">TAMPINES</option>
+            <option value="TOA PAYOH">TOA PAYOH</option>
+            <option value="WOODLANDS">WOODLANDS</option>
+            <option value="YISHUN">YISHUN</option>
+        </select>
+    </div>
+    <button id="submit" class="ui primary button">Submit</button>
+    <button id="reset" type="reset" class="ui button">Reset</button>
+</form>
+{% endblock %}

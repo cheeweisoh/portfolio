@@ -3,7 +3,8 @@ import os
 os.chdir('D:/User/Documents/R/Portfolio/Github/hdb_resale_prices/deployment')
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Form
+from fastapi.templating import Jinja2Templates
 import pickle
 import requests
 import pandas as pd
@@ -18,6 +19,7 @@ app = FastAPI(
     version='0.1'
 )
 
+templates = Jinja2Templates(directory='templates')
 
 # Importing necessary external files
 mrt_coord = pd.read_csv('models/mrt_coord.csv')
@@ -25,6 +27,17 @@ pri_sch_coord = pd.read_csv('models/pri_school_coord.csv')
 sec_sch_coord = pd.read_csv('models/sec_school_coord.csv')
 malls_coord = pd.read_csv('models/malls_coord.csv')
 classifier = pickle.load(open('xgb_best.sav', 'rb'))
+
+def to_capitalise(s: str):
+    words = s.split(' ')
+    out = []
+    for i in words:
+        if i in ('MRT', 'LRT'):
+            out.append(i)
+            continue
+        i = i.capitalize()
+        out.append(i)
+    return ' '.join(out)
 
 def geocoding(house: House):
     data = house.dict()
@@ -77,8 +90,10 @@ def predict_price(house: House):
 
 # Index route, opens on http://127.0.0.1:8000
 @app.get('/', include_in_schema=False)
-def index():
-    return {'message': 'Hello World'}
+def index(request: Request):
+    return templates.TemplateResponse('input.html', {
+        'request': request
+    })
 
 
 @app.post('/nearest_mrt')
@@ -114,6 +129,45 @@ def predict(house: House):
     price = predict_price(house)
     return price
 
+@app.post('/submit')
+async def predict_main(request: Request,
+                       postal_code: str=Form(...),
+                       floor: str=Form(...),
+                       remaining_lease: str=Form(...),
+                       floor_area_sqm: str=Form(...),
+                       flat_type: str=Form(...),
+                       flat_model: str=Form(...),
+                       town: str=Form(...)):
+    house = House(postal_code=postal_code,
+                  floor=float(floor),
+                  floor_area_sqm=float(floor_area_sqm),
+                  remaining_lease=float(remaining_lease),
+                  flat_type=flat_type,
+                  flat_model=flat_model,
+                  town=town)
+
+    coords = geocoding(house)
+    mrt, _ = calculate_nearest(coords, mrt_coord)
+    pri, _ = calculate_nearest(coords, pri_sch_coord)
+    sec, _ = calculate_nearest(coords, sec_sch_coord)
+    mall, _ = calculate_nearest(coords, malls_coord)
+    price = predict_price(house)
+
+    return templates.TemplateResponse('output.html', {
+        'request': request,
+        'postal_code': postal_code,
+        'floor': floor,
+        'floor_area_sqm': floor_area_sqm,
+        'remaining_lease': remaining_lease,
+        'flat_type': to_capitalise(flat_type),
+        'flat_model': to_capitalise(flat_model),
+        'town': to_capitalise(town),
+        'nearest_mrt': to_capitalise(mrt),
+        'nearest_pri': to_capitalise(pri),
+        'nearest_sec': to_capitalise(sec),
+        'nearest_mall': to_capitalise(mall),
+        'price': round(price,2)
+    })
 
 # Runs the API with uvicorn
 if __name__ == '__main__':
