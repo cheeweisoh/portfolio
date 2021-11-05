@@ -8,8 +8,8 @@ In this project, we explore the factors that might affect HDB resale prices in S
 ## Current Status
 * [Completed] Data Collection
 * [Completed] Exploratory Data Analysis
-* [In Progress] Model Building
-* [Pending] Implementation
+* [Completed] Model Building
+* [In Progress] Implementation
 
 ## Table of Contents
 
@@ -23,9 +23,22 @@ In this project, we explore the factors that might affect HDB resale prices in S
 
 ### Technologies
 * Python
-* Pandas
-* Numpy
+* pandas
+* NumPy
 * Matplotlib
+* scikit-learn
+* FastAPI
+
+### Methods
+Preprocessing
+* Standardisation: StandardScaler
+* Feature Encoding: OneHotEncoder
+
+Model Building
+* scikit-learn Pipelines
+* Linear Models: Linear Regression, Ridge Regression
+* Tree Models: Random Forest Regressor, XGBoost Regressor
+* Hyperparameter Tuning: RandomizedSearchCV, GridSearchCV
 
 <a name="Project_Description"></a>
 ## Project Description
@@ -38,7 +51,7 @@ In this project, we explore the factors that might affect HDB resale prices in S
 <a name="File_Descriptions"></a>
 ## File Descriptions
 
-* <strong>[ data ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : folder containing all data files used/generated
+* <strong>[ data ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : data files used/generated
     * <strong> coord_data.csv </strong>: list of unique addresses and the corresponding latitudes and longitudes
     * <strong> housing_cpi.csv </strong>: list of price indices for resale flats from 2017 to 2021, obtained from Singapore Department of Statistics
     * <strong> malls.csv </strong>: list of shopping malls in Singapore, obtained from Wikipedia
@@ -49,6 +62,15 @@ In this project, we explore the factors that might affect HDB resale prices in S
     * <strong> nearest_sec_school.csv </strong>: distance from resale flat to nearest secondary school for each unique address
     * <strong> resale_prices.csv </strong>: dataset with added features
     * <strong> resale_prices_final.csv </strong>: final dataset for model building
+* <strong>[ deployment ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/deployment)</strong> : deployment files to FastAPI
+    * <strong> models </strong>: model/preprocessing files
+        * <strong> house.py </strong>: House object for initiating input
+        * <strong> malls_coord.csv </strong>: list of coordinates for all malls
+        * <strong> mrt_coord.csv </strong>: list of coordinates for all MRT/LRT stations
+        * <strong> pri_school_coord.csv </strong>: list of coordinates for all primary schools
+        * <strong> sec_school_coord.csv </strong>: list of coordinates for all secondary schools
+    * <strong> main.py </strong>: main file for FastAPI deployment
+    * <strong> xgb_best.sav </strong>: pickle file for XGBoost pipeline
 * <strong>Housing Price Dataset.ipynb</strong>: retrieving dataset from source, and including new features for distance to amenities
 * <strong>Housing Price Analysis.ipynb</strong>: exploratory data analysis of resale price dataset
 * <strong>Housing Prices Model.ipynb</strong>: building supervised learning models to predict resale price
