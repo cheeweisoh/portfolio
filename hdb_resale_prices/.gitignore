@@ -5,5 +5,5 @@ Housing Price Model.py
 Housing Price EDA.py
 raw_resale_price.csv
 unique_house_coordinates.csv
-/resale_price_deployment/models/datasets.py
-/resale_price_deployment/test.py
+/resale_prices_deployment/models/datasets.py
+/resale_prices_deployment/test.py
