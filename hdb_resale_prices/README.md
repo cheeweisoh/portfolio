@@ -10,7 +10,7 @@ The completed API is available for use on Heroku [ here ](https://hdb-resale-pri
 ## Current Status
 * [Completed] Data Collection
 * [Completed] Exploratory Data Analysis
-* [Completed/Updating] Model Building
+* [Completed] Model Building
 * [Completed] Implementation
 * [In Progress] Evaluation/Improvements
 
