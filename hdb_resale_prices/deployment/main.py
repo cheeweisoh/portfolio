@@ -1,8 +1,4 @@
-import os
-
-os.chdir('D:/User/Documents/R/Portfolio/Github/hdb_resale_prices/deployment')
-
-import uvicorn
+mport uvicorn
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 import pickle
