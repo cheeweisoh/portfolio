@@ -55,10 +55,10 @@ Model Building
 ### Housing Price Model
 * Supervised machine learning methods were applied to the final dataset, to determine the best model for application.
 * Linear Regression and Ridge Regression were used for linear models. Dataset was fed through a pipeline where continuous features were standardised using StandardScaler and categorical features were encoded using OneHotEncoder.
-  * For linear models, an R^2 value of .910 and a mean absolute error of .077 was obtained.
+  * For linear models, an R^2 value of .910 and a root mean squred error of 0.00962 was obtained.
 * Random Forest Regressor and XGBoost Regressor were used for tree-based models. Dataset was fed through a pipeline where only categorical features were encoded using OneHotEncoder.
   * Hyperparameter tuning was also applied used RandomizedSearchCV to determine the best hyperparameters for each model.
-  * TEST RESULTS
+  * For tree-based models, an R^2 value of .969 and a root mean squared error of 0.00328 was obtained.
 * The model ultimately chosen for deployment was an XGBoost Regressor with tuned hyperparameters.
 
 ### Deployment
