@@ -7,8 +7,6 @@ In this project, we explore the factors that might affect HDB resale prices in S
 
 The completed API is available for use on Heroku [ here ](https://hdb-resale-prices.herokuapp.com/).
 
-<img height="192" src="D:\User\Documents\R\Portfolio\Github\hdb_resale_prices\resale_prices_deployment\input.JPG" width="579"/>
-
 ## Current Status
 * [Completed] Data Collection
 * [Completed] Exploratory Data Analysis
