@@ -99,15 +99,15 @@ def get_nearest_mrt(house: House):
     return mrt
 
 
-@app.post('/nearest_primary_school')
-def get_nearest_pri_sch(house: House):
+@app.post('/nearest_pri_school')
+def get_nearest_primary_sch(house: House):
     coords = geocoding(house)
     sch, _ = calculate_nearest(coords, pri_sch_coord)
     return sch
 
 
-@app.post('/nearest_secondary_school')
-def get_nearest_sec_sch(house: House):
+@app.post('/nearest_sec_school')
+def get_nearest_secondary_sch(house: House):
     coords = geocoding(house)
     sch, _ = calculate_nearest(coords, sec_sch_coord)
     return sch
@@ -125,7 +125,7 @@ def predict(house: House):
     price = predict_price(house)
     return price
 
-@app.post('/submit')
+@app.post('/submit', include_in_schema=False)
 async def predict_main(request: Request,
                        postal_code: str=Form(...),
                        floor: str=Form(...),
