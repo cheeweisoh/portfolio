@@ -1,4 +1,4 @@
-mport uvicorn
+import uvicorn
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 import pickle
