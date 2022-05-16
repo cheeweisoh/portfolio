@@ -7,12 +7,8 @@ In this project, we explore the factors that might affect HDB resale prices in S
 
 The completed API is available for use on Heroku [ here ](https://hdb-resale-prices.herokuapp.com/).
 
-## Current Status
-* [Completed] Data Collection
-* [Completed] Exploratory Data Analysis
-* [Completed] Model Building
-* [Completed] Implementation
-* [In Progress] Evaluation/Improvements
+## Change Log
+* \[16/05/2022] <br> Changed methodology for primary school score calculation, to take into account ranking of primary schools and balloting priority system based on distance of house from school.
 
 ## Table of Contents
 
