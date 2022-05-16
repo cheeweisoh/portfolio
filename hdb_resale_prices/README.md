@@ -71,14 +71,14 @@ Model Building
 ## File Descriptions
 
 * <strong>[ data ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : data files used/generated
-    * <strong> coord_data.csv </strong>: list of unique addresses and the corresponding latitudes and longitudes
     * <strong> housing_cpi.csv </strong>: list of price indices for resale flats from 2017 to 2021, obtained from Singapore Department of Statistics
     * <strong> malls.csv </strong>: list of shopping malls in Singapore, obtained from Wikipedia
+    * <strong> mrt_coord.csv </strong>: list of coordinates for all MRT/LRT stations from mrt_stations.csv
     * <strong> mrt_stations.csv </strong>: list of MRT/LRT stations in Singapore, obtained from Land Transport Authority website
     * <strong> nearest_mall.csv </strong>: distance from resale flat to nearest shopping mall for each unique address
-    * <strong> nearest_mrt.csv </strong>: distance from resale flat to nearest MRT/LRT station for each unique address
-    * <strong> nearest_pri_sch.csv </strong>: distance from resale flat to nearest primary school for each unique address
     * <strong> nearest_sec_school.csv </strong>: distance from resale flat to nearest secondary school for each unique address
+    * <strong> pri_sch_coord.csv </strong>: list of coordinates for all primary schools from pri_sch_ranking.csv
+    * <strong> pri_sch_ranking.csv </strong>: list of primary schools and rankings based on popularity in 2021
     * <strong> resale_prices.csv </strong>: dataset with added features
     * <strong> resale_prices_final.csv </strong>: final dataset for model building
 * <strong>[ resale_prices_deployment ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/deployment)</strong> : deployment files to FastAPI
