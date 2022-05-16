@@ -8,7 +8,9 @@ In this project, we explore the factors that might affect HDB resale prices in S
 The completed API is available for use on Heroku [ here ](https://hdb-resale-prices.herokuapp.com/).
 
 ## Change Log
-* \[16/05/2022] <br> Changed methodology for primary school score calculation, to take into account ranking of primary schools and balloting priority system based on distance of house from school.
+\[16/05/2022]
+* Changed methodology for primary school score calculation, to take into account ranking of primary schools and balloting priority system based on distance of house from school.
+* Updated list of shopping centres and primary schools (removed Juying Primary School due to merger)
 
 ## Table of Contents
 
@@ -69,12 +71,12 @@ Model Building
 * <strong>[ data ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/data)</strong> : data files used/generated
     * <strong> housing_cpi.csv </strong>: list of price indices for resale flats from 2017 to 2021, obtained from Singapore Department of Statistics
     * <strong> malls.csv </strong>: list of shopping malls in Singapore, obtained from Wikipedia
+    * <strong> malls_coord.csv </strong>: list of coordinates for all shopping malls from malls.csv
     * <strong> mrt_coord.csv </strong>: list of coordinates for all MRT/LRT stations from mrt_stations.csv
     * <strong> mrt_stations.csv </strong>: list of MRT/LRT stations in Singapore, obtained from Land Transport Authority website
-    * <strong> nearest_mall.csv </strong>: distance from resale flat to nearest shopping mall for each unique address
-    * <strong> nearest_sec_school.csv </strong>: distance from resale flat to nearest secondary school for each unique address
     * <strong> pri_sch_coord.csv </strong>: list of coordinates for all primary schools from pri_sch_ranking.csv
     * <strong> pri_sch_ranking.csv </strong>: list of primary schools and rankings based on popularity in 2021
+    * <strong> resale_df_geocode.csv </strong>: list of resale flats with coordinates
     * <strong> resale_prices.csv </strong>: dataset with added features
     * <strong> resale_prices_final.csv </strong>: final dataset for model building
 * <strong>[ resale_prices_deployment ](https://github.com/cheeweisoh/portfolio/tree/main/hdb_resale_prices/deployment)</strong> : deployment files to FastAPI
