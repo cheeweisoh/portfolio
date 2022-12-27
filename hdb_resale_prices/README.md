@@ -5,7 +5,7 @@ Public housing in Singapore is managed by the Housing and Development Board. The
 
 In this project, we explore the factors that might affect HDB resale prices in Singapore. Since majority of Singaporeeans own HDB units, this could give them an indication as to the current prices of their property. In this part, we will work on publicly available datasets to generate a set of possible factors that might affect resale prices. In the next part, we will make use of data analytics to examine the effect of housing prices on these factors, and use models to predict the resale prices of HDB flats in Singapore.
 
-The completed API is available for use on Heroku [ here ](https://hdb-resale-prices.herokuapp.com/).
+The completed API is available for use on Heroku [ here ](https://hdb-resale-prices-calculator.onrender.com/).
 
 ## Change Log
 \[16/05/2022]
