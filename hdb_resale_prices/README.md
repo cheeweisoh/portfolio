@@ -63,7 +63,7 @@ Model Building
 * FastAPI was used for the implmentation of the trained model into an API.
 * The API also included additional features such as retrieving the nearest amenities to the input address.
 * A user interface was also created to make the API more user-friendly.
-* The API was then deployed onto Heroku for use (https://hdb-resale-prices.herokuapp.com/).
+* The API was then deployed onto Render for use (https://hdb-resale-prices-calculator.onrender.com/).
 
 <a name="File_Descriptions"></a>
 ## File Descriptions
