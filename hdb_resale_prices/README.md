@@ -29,7 +29,7 @@ The completed API is available for use on Render [ here ](https://hdb-resale-pri
 * Matplotlib
 * scikit-learn
 * FastAPI
-* Heroku
+* Heroku/Render
 
 ### Methods
 Preprocessing
