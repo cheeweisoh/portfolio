@@ -1,9 +1,4 @@
 data_backup
-Housing Price Coordinates.py
-Housing Price Dataset.py
-Housing Price Inflation.py
-Housing Price Model.py
-Housing Price EDA.py
 unique_house_coordinates.csv
 /data/resale_df_raw.csv
 /data/resale_df.csv
